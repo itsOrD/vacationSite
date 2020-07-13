@@ -1,4 +1,19 @@
-/* normalize */
-.body {
-    text-align: center;
+body {
+    font-family: 'B612', sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center
+}
+
+.title-area {
+    background-color: orange;
+    margin-top: 20px;
+    justify-content: center;
+    padding: -20;
+}
+
+.submit-btn {
+    width: 100%;
 }

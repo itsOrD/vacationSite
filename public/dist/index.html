@@ -6,45 +6,93 @@
 
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
             <link rel="stylesheet" href="/styles.css">
+            <link href="https://fonts.googleapis.com/css2?family=B612:wght@700&display=swap" rel="stylesheet">
 
             <title> Vacation Destinations WishList </title>
         </head>
     <body>
-        <div class="flex-container">
-            <div>
-                <h1> Vacation Destinations Wishlist</h1>
-                <p>Have you found an exciting place you want to visit during your next vacation?  The form on this site will help you keep track.  Go ahead and fill it out, and no worries - entries can be edited/updated!</p>
-            </div>
-
-            <hr />
-
-            <div class="dest_form">
-                <form id="dest_form">
-                    <label>Destination Name:
-                        <input 
-                            placeholder="Enter the name of the destination"
-                        />
-                    </label>
-                    <label>Location:
-                        <input 
-                            placeholder="Where is it located?"
-                        />
-                    </label>
-                    <label>Photo:
-                        <input 
-                            placeholder="Enter an image url of the place"
-                        />
-                    </label>
-                    <label>Description:
-                        <input 
-                            placeholder="Where is it located?"
-                        />
-                    </label>
-                    <button type=submit onsubmit="">Add to List</button>
-                </form>
-                <p>Enter destination details</p>
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1 class="title"> Vacation Destinations Wishlist</h1>
+                <p>Have you found an exciting place you want to visit during your next vacation?  The form on this site will help you keep track.<br> Go ahead and fill it out, and no worries - entries can be edited/updated!</p>
             </div>
         </div>
+
+        <hr />
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <form id="dest_form">
+                        <div class="form-group">
+                            <label>Destination Name:
+                                <input 
+                                    pattern=".{1,}"   required title="1 char minimum"
+                                    type="text"
+                                    class="form-control"
+                                    id="destination"
+                                    placeholder=" Enter destination here"
+                                />
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Location:
+                                <input 
+                                    pattern=".{3,}"   required title="3 characters minimum"
+                                    type="text"
+                                    class="form-control"
+                                    id="location"
+                                    placeholder=" Where is it located?"
+                                />
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Photo:
+                                <input 
+                                    type="url"
+                                    class="form-control"
+                                    id="photo"
+                                    placeholder=" Enter image url"
+                                />
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label><br>
+                                <textarea
+                                    rows="3"
+                                    cols="36"
+                                    id="details"
+                                    placeholder=" Don't skimp on the deets!"
+                                ></textarea><br>
+                        </div>
+                        <button 
+                            type=submit
+                            id="test"
+                            class="btn btn-warning submit-btn"
+                            >Add to List
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col=sm-8">
+                    <h4 class="title"> Your wishlist: </h4>
+                    <div class="wishlist">
+                        <!-- dynamically fill -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </body>
     <script src="../../client/src/index.js"></script>
+    <script>
+        var cnt = 0;
+        var test = document.getElementById('test');
+        test.onclick = () => {
+            cnt++;
+            console.log('hi: ', cnt);
+        };
+    </script>
 </html>
