@@ -4,6 +4,7 @@
   "description": "JS webdev practice site",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/itsOrD/vacationSite/issues"
   },
-  "homepage": "https://github.com/itsOrD/vacationSite#readme"
+  "homepage": "https://github.com/itsOrD/vacationSite#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
 }
